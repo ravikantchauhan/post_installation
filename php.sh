@@ -28,40 +28,27 @@ cmd=(dialog --separate-output --checklist "PHP $(php -v | grep cli | awk '{print
 
 			2)
 			    	#Install LAMP stack
-				echo "Installing Apache"
-				apt install apache2 -y
-	            
-    			echo "Installing Mysql Server"
-	 			apt install mysql-server -y
-
-        		echo "Installing PHP"
-				apt install php libapache2-mod-php php-mcrypt php-mysql -y
-	            
-        		echo "Installing Phpmyadmin"
-				apt install phpmyadmin -y
-
-				echo "Cofiguring apache to run Phpmyadmin"
-				echo "Include /etc/phpmyadmin/apache.conf" >> /etc/apache2/apache2.conf
-				
-				echo "Enabling module rewrite"
-				sudo a2enmod rewrite
-				echo "Restarting Apache Server"
-				service apache2 restart
+				echo "Please wait"
 				;;
     	    esac
 	done
 fi
-
+##########
+$ sudo apt install python-software-properties
+$ sudo add-apt-repository ppa:ondrej/php
 
 
 ######	
 	sudo apt-get install dialog
 	cmd=(dialog --separate-output --checklist "Please Select php version to need install:" 22 76 16)
-	options=(1 "Sublime Text 3" off    # any option can be set to default to "on"
-	         2 "LAMP Stack" off
-	         3 "Build Essentials" off
-	         4 "Node.js" off
-	         5 "Git" off)
+	options=(1 "PHP 5.6" off    # any option can be set to default to "on"
+	         2 "PHP 7.0" off
+	         3 "PHP 7.1" off
+	         4 "PHP 7.2" off
+	         5 "PHP 7.1" off
+	         6 "PHP 7.3" off
+	         7 "PHP 7.4" off
+	         5 "PHP 8.0" off)
 			 
 		choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 		clear
@@ -70,51 +57,49 @@ fi
 		    case $choice in
 	        	1)
 	            		#Install Sublime Text 3*
-				echo "Installing Sublime Text"
-				add-apt-repository ppa:webupd8team/sublime-text-3 -y
-				apt update
-				apt install sublime-text-installer -y
+				echo "Installing php5.6"
+				sudo apt install php5.6
+				
 				;;
 
 			2)
 			    	#Install LAMP stack
-				echo "Installing Apache"
-				apt install apache2 -y
-	            
-    			echo "Installing Mysql Server"
-	 			apt install mysql-server -y
-
-        		echo "Installing PHP"
-				apt install php libapache2-mod-php php-mcrypt php-mysql -y
-	            
-        		echo "Installing Phpmyadmin"
-				apt install phpmyadmin -y
-
-				echo "Cofiguring apache to run Phpmyadmin"
-				echo "Include /etc/phpmyadmin/apache.conf" >> /etc/apache2/apache2.conf
-				
-				echo "Enabling module rewrite"
-				sudo a2enmod rewrite
-				echo "Restarting Apache Server"
+				echo "Installing php7.0"
+				sudo apt install php7.0 -y
 				service apache2 restart
 				;;
     		3)	
 				#Install Build Essentials
-				echo "Installing Build Essentials"
-				apt install -y build-essential
+				echo "Installing php7.1"
+				sudo apt install php7.1
+				service apache2 restart
 				;;
 				
 			4)
 				#Install Nodejs
-				echo "Installing Nodejs"
-				curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-				apt install -y nodejs
+				echo "Installing php7.2"
+				sudo apt install php7.2 -y
+				service apache2 restart
 				;;
 
 			5)
 				#Install git
-				echo "Installing Git, please congiure git later..."
-				apt install git -y
+				echo "Installing php7.2"
+				sudo apt install php7.3 -y
+				service apache2 restart
+				;;
+			6)
+				#Install git
+				echo "Installing php7.4"
+				sudo apt install php7.4 -y
+				service apache2 restart
+				;;
+				5)
+			7)
+				#Install git
+				echo "Installing php8.0"
+				sudo apt install php8.0 -y
+				service apache2 restart
 				;;
 
 	    esac
