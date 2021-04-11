@@ -34,8 +34,9 @@ cmd=(dialog --separate-output --checklist "PHP $(php -v | grep cli | awk '{print
 	done
 fi
 ##########
-$ sudo apt install python-software-properties
+$ sudo apt install -y python-software-properties
 $ sudo add-apt-repository ppa:ondrej/php
+apt-get update
 
 
 ######	
@@ -66,12 +67,14 @@ $ sudo add-apt-repository ppa:ondrej/php
 			    	#Install LAMP stack
 				echo "Installing php7.0"
 				sudo apt install php7.0 -y
+				sudo apt-get install -y php7.0-{bcmath,bz2,intl,gd,mbstring,mysql,zip,common}
 				service apache2 restart
 				;;
     		3)	
 				#Install Build Essentials
 				echo "Installing php7.1"
 				sudo apt install php7.1
+				sudo apt-get install -y php7.1-{bcmath,bz2,intl,gd,mbstring,mysql,zip,common}
 				service apache2 restart
 				;;
 				
@@ -79,6 +82,7 @@ $ sudo add-apt-repository ppa:ondrej/php
 				#Install Nodejs
 				echo "Installing php7.2"
 				sudo apt install php7.2 -y
+				sudo apt-get install -y php7.2-{bcmath,bz2,intl,gd,mbstring,mysql,zip,common}
 				service apache2 restart
 				;;
 
@@ -86,18 +90,21 @@ $ sudo add-apt-repository ppa:ondrej/php
 				#Install git
 				echo "Installing php7.2"
 				sudo apt install php7.3 -y
+				sudo apt-get install -y php7.3-{bcmath,bz2,intl,gd,mbstring,mysql,zip,common}
 				service apache2 restart
 				;;
 			6)
 				#Install git
 				echo "Installing php7.4"
 				sudo apt install php7.4 -y
+				sudo apt-get install -y php7.4-{bcmath,bz2,intl,gd,mbstring,mysql,zip,common}
 				service apache2 restart
 				;;
 			7)
 				#Install git
 				echo "Installing php8.0"
 				sudo apt install php8.0 -y
+				sudo apt-get install -y php8.0-{bcmath,bz2,intl,gd,mbstring,mysql,zip,common}
 				service apache2 restart
 				;;
 
