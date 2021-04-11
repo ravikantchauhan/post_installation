@@ -34,11 +34,9 @@ cmd=(dialog --separate-output --checklist "PHP $(php -v | grep cli | awk '{print
 	done
 fi
 ##########
-$ sudo apt install -y python-software-properties
-$ sudo add-apt-repository ppa:ondrej/php
-apt-get update
-
-
+sudo apt install -y python-software-properties
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get update
 ######	
 	sudo apt-get install dialog
 	cmd=(dialog --separate-output --checklist "Please Select php version to need install:" 22 76 16)
@@ -46,10 +44,9 @@ apt-get update
 	         2 "PHP 7.0" off
 	         3 "PHP 7.1" off
 	         4 "PHP 7.2" off
-	         5 "PHP 7.1" off
-	         6 "PHP 7.3" off
-	         7 "PHP 7.4" off
-	         5 "PHP 8.0" off)
+	         5 "PHP 7.3" off
+	         6 "PHP 7.4" off
+	         7 "PHP 8.0" off)
 			 
 		choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 		clear
@@ -59,21 +56,20 @@ apt-get update
 	        	1)
 	            		#Install Sublime Text 3*
 				echo "Installing php5.6"
-				sudo apt install php5.6
-				
+				sudo apt -y install php5.6
 				;;
 
 			2)
 			    	#Install LAMP stack
 				echo "Installing php7.0"
-				sudo apt install php7.0 -y
+				sudo apt install -y php7.0
 				sudo apt-get install -y php7.0-{bcmath,bz2,intl,gd,mbstring,mysql,zip,common}
 				service apache2 restart
 				;;
-    		3)	
-				#Install Build Essentials
+    			3)
+    						#Install Build Essentials
 				echo "Installing php7.1"
-				sudo apt install php7.1
+				sudo apt install -y php7.1
 				sudo apt-get install -y php7.1-{bcmath,bz2,intl,gd,mbstring,mysql,zip,common}
 				service apache2 restart
 				;;
@@ -81,7 +77,7 @@ apt-get update
 			4)
 				#Install Nodejs
 				echo "Installing php7.2"
-				sudo apt install php7.2 -y
+				sudo apt install -y php7.2
 				sudo apt-get install -y php7.2-{bcmath,bz2,intl,gd,mbstring,mysql,zip,common}
 				service apache2 restart
 				;;
@@ -89,21 +85,21 @@ apt-get update
 			5)
 				#Install git
 				echo "Installing php7.2"
-				sudo apt install php7.3 -y
+				sudo apt install -y php7.3
 				sudo apt-get install -y php7.3-{bcmath,bz2,intl,gd,mbstring,mysql,zip,common}
 				service apache2 restart
 				;;
 			6)
 				#Install git
 				echo "Installing php7.4"
-				sudo apt install php7.4 -y
+				sudo apt install -y php7.4
 				sudo apt-get install -y php7.4-{bcmath,bz2,intl,gd,mbstring,mysql,zip,common}
 				service apache2 restart
 				;;
 			7)
 				#Install git
 				echo "Installing php8.0"
-				sudo apt install php8.0 -y
+				sudo apt install -y php8.0
 				sudo apt-get install -y php8.0-{bcmath,bz2,intl,gd,mbstring,mysql,zip,common}
 				service apache2 restart
 				;;
