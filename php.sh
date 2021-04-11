@@ -23,7 +23,7 @@ cmd=(dialog --separate-output --checklist "PHP $(php -v | grep cli | awk '{print
 				echo "Unistalling PHP $(php -v | grep cli | awk '{print $2'}) "
 				sudo apt-get purge php*
 				sudo apt-get autoclean
-				sudo apt-get autoremove
+				sudo apt-get autoremove -y
 				;;
 
 			2)
