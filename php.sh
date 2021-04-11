@@ -94,7 +94,6 @@ $ sudo add-apt-repository ppa:ondrej/php
 				sudo apt install php7.4 -y
 				service apache2 restart
 				;;
-				5)
 			7)
 				#Install git
 				echo "Installing php8.0"
