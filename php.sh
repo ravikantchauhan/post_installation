@@ -21,7 +21,7 @@ cmd=(dialog --separate-output --checklist "PHP $(php -v | grep cli | awk '{print
 	        	1)
 	            		#Install Sublime Text 3*
 				echo "Unistalling PHP $(php -v | grep cli | awk '{print $2'}) "
-				sudo apt-get purge php*
+				sudo apt-get -y purge 'php*'
 				sudo apt-get autoclean
 				sudo apt-get autoremove -y
 				;;
@@ -106,4 +106,4 @@ sudo apt-get update
 
 	    esac
 	done
-fi
+
