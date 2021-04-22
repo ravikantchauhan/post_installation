@@ -46,7 +46,6 @@ cmd=(dialog --separate-output --checklist "PHP $(php -v | grep cli | awk '{print
 				sudo apt install -y php$dead_app
 				sudo apt-get install -y $dead_app-{bcmath,bz2,intl,gd,mbstring,mysql,zip,common}
 				service apache2 restart
-				;;
 				##########
 	            
     			echo "Installing Mysql Server"
