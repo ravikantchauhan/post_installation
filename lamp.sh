@@ -7,6 +7,7 @@ else
 	#Update and Upgrade
 	echo "Updating "
 	#apt-get update
+	sudo apt-get install dialog
 #######
 
 cmd=(dialog --separate-output --checklist "PHP $(php -v | grep cli | awk '{print $2'}) already install:Are youn want uninstall? :" 22 76 16)
