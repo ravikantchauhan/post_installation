@@ -12,7 +12,7 @@ else
 
 cmd=(dialog --separate-output --checklist "PHP $(php -v | grep cli | awk '{print $2'}) already install:Are youn want uninstall? :" 22 76 16)
 	options=(1 "yes uninstall " off    # any option can be set to default to "on"
-	         2 "No- keep PHP $(php -v | grep cli | awk '{print $2'}) "
+	         2 "No- keep PHP $(php -v | grep cli | awk '{print $2'}) " off
 	         3 "Install LAMP stack" off)
 			 
 		choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
@@ -43,9 +43,9 @@ cmd=(dialog --separate-output --checklist "PHP $(php -v | grep cli | awk '{print
 				sudo add-apt-repository ppa:ondrej/php
 				sudo apt-get update
 				#Install php
-				echo "Installing php$dead_app"
-				sudo apt install -y php$dead_app
-				sudo apt-get install -y $dead_app-{bcmath,bz2,intl,gd,mbstring,mysql,zip,common}
+				echo "Installing php$php_versin"
+				sudo apt install -y php$php_versin
+				sudo apt-get install -y $php_versin-{bcmath,bz2,intl,gd,mbstring,mysql,zip,common}
 				service apache2 restart
 				##########
 	            
