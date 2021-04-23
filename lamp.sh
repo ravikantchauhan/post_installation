@@ -48,13 +48,22 @@ cmd=(dialog --separate-output --checklist "PHP $(php -v | grep cli | awk '{print
 				sudo apt-get install -y $php_versin-{bcmath,bz2,intl,gd,mbstring,mysql,zip,common}
 				service apache2 restart
 				##########
-	            
+	            #######Mysql server
     			echo "Installing Mysql Server"
-    				wget  https://dev.mysql.com/get/mysql-apt-config_0.8.16-1_all.deb 
+				var4="$(mysql -V | awk '{print $3'})"
+				if [[ $var4 > 0 ]]; then
+   				echo " mysql server $var4 is already install" 
+   				exit 1
+				else
+				#Update and Upgrade
+				echo "mysqlnot found"
+				# apt-get update && sudo apt-get upgrade -y
+    			wget  https://dev.mysql.com/get/mysql-apt-config_0.8.16-1_all.deb 
 				sudo dpkg -i mysql-apt-config_0.8.16-1_all.deb 
 				sudo apt update
 				sudo apt install mysql-server -y
 				sudo apt install mysql-workbench-community -y
+				fi
 
         		echo "Installing Phpmyadmin"
 				apt install phpmyadmin -y
