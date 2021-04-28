@@ -65,9 +65,10 @@ cmd=(dialog --separate-output --checklist "PHP $(php -v | grep cli | awk '{print
 				sudo apt install mysql-workbench-community -y
 				fi
 
-        		echo "Installing Phpmyadmin"
+        			echo "Installing Phpmyadmin"
         			if [[ -e /etc/phpmyadmin/apache.conf ]] ; then
 				echo "phpmyadmin is alreday install"
+				exit 1
 				else
 				apt install phpmyadmin -y
 				echo "Cofiguring apache to run Phpmyadmin"
