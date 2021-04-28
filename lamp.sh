@@ -66,7 +66,7 @@ cmd=(dialog --separate-output --checklist "PHP $(php -v | grep cli | awk '{print
 				fi
 
         			echo "Installing Phpmyadmin"
-        			if [[ -e /etc/phpmyadmin/apache.conf ]] ; then
+        		if [[ -e /etc/phpmyadmin/apache.conf ]] ; then
 				echo "phpmyadmin is alreday install"
 				exit 1
 				else
