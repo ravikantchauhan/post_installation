@@ -66,14 +66,17 @@ cmd=(dialog --separate-output --checklist "PHP $(php -v | grep cli | awk '{print
 				fi
 
         		echo "Installing Phpmyadmin"
+        			if [[ -e /etc/phpmyadmin/apache.conf ]] ; then
+				echo "phpmyadmin is alreday install"
+				else
 				apt install phpmyadmin -y
-
 				echo "Cofiguring apache to run Phpmyadmin"
 				echo "Include /etc/phpmyadmin/apache.conf" >> /etc/apache2/apache2.conf
-				
 				echo "Enabling module rewrite"
 				sudo a2enmod rewrite
 				echo "Restarting Apache Server"
+				service apache2 restart
+				fi
 				service apache2 restart
 				;;	
     	    esac
