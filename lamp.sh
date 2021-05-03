@@ -39,8 +39,8 @@ cmd=(dialog --separate-output --checklist "PHP $(php -v | grep cli | awk '{print
 				echo "Please Enter php-verions? "
 				read php_versin
 				########
-				sudo apt install -y python-software-properties
-				sudo add-apt-repository ppa:ondrej/php
+				#sudo apt install -y python-software-properties
+				sudo add-apt-repository -y ppa:ondrej/php
 				sudo apt-get update
 				#Install php
 				echo "Installing php$php_versin"
