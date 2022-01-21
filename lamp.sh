@@ -6,7 +6,7 @@ if [[ $EUID -ne 0 ]]; then
 else
 	#Update and Upgrade
 	echo "Updating "
-	#apt-get update
+	apt-get update
 	sudo apt-get install dialog
 #######
 
