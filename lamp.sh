@@ -63,10 +63,6 @@ cmd=(dialog --separate-output --checklist "PHP $(php -v | grep cli | awk '{print
 				sudo apt update
 				sudo apt install mysql-server -y
 				#sudo apt install mysql-workbench-community -y
-				sudo mysql <<EOF
-				ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'root';
-				FLUSH PRIVILEGES;
-				EOF
 				fi
 
         			echo "Installing Phpmyadmin"
@@ -87,5 +83,10 @@ cmd=(dialog --separate-output --checklist "PHP $(php -v | grep cli | awk '{print
     	    esac
 	done
 fi
+###########
+sudo mysql <<EOF
+ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'root';
+FLUSH PRIVILEGES;
+EOF
 ##########
 
