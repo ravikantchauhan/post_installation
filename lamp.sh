@@ -85,7 +85,7 @@ cmd=(dialog --separate-output --checklist "PHP $(php -v | grep cli | awk '{print
 fi
 ###########
 sudo mysql <<EOF
-ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'root';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
 FLUSH PRIVILEGES;
 EOF
 ##########
