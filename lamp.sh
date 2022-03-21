@@ -58,8 +58,8 @@ cmd=(dialog --separate-output --checklist "PHP $(php -v | grep cli | awk '{print
 				#Update and Upgrade
 				echo "mysqlnot found"
 				# apt-get update && sudo apt-get upgrade -y
-    			wget  https://dev.mysql.com/get/mysql-apt-config_0.8.16-1_all.deb 
-				sudo dpkg -i mysql-apt-config_0.8.16-1_all.deb 
+    			#wget  https://dev.mysql.com/get/mysql-apt-config_0.8.16-1_all.deb 
+				#sudo dpkg -i mysql-apt-config_0.8.16-1_all.deb 
 				sudo apt update
 				sudo apt install mysql-server -y
 				#sudo apt install mysql-workbench-community -y
