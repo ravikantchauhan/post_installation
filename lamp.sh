@@ -45,7 +45,7 @@ cmd=(dialog --separate-output --checklist "PHP $(php -v | grep cli | awk '{print
 				#Install php
 				echo "Installing php$php_versin"
 				sudo apt install -y php$php_versin
-				sudo apt-get install -y $php_versin-{bcmath,bz2,intl,gd,mbstring,mysql,zip,common}
+				sudo apt-get install -y $php_versin-{bcmath,bz2,intl,gd,mbstring,mysql,zip,common,dom}
 				service apache2 restart
 				##########
 	            #######Mysql server
