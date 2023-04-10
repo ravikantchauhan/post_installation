@@ -77,6 +77,17 @@ cmd=(dialog --separate-output --checklist "PHP $(php -v | grep cli | awk '{print
 				sudo a2enmod rewrite
 				echo "Restarting Apache Server"
 				service apache2 restart
+				cd /tmp/
+				sudo tar -cvzf phpmyadmin-old.tar.gz /usr/share/phpmyadmin/
+				cd  /usr/share/phpmyadmin/
+				sudo rm -rf *
+				 sudo rm -rf .*
+				wget https://files.phpmyadmin.net/phpMyAdmin/5.2.1/phpMyAdmin-5.2.1-english.tar.gz
+				tar -xvf phpMyAdmin-5.2.1-english.tar.gz
+				cd phpMyAdmin-5.2.1-english
+				sudo mv *  /usr/share/phpmyadmin/
+				sudo mv .*  /usr/share/phpmyadmin/
+				systemctl restart apache2
 				fi
 				service apache2 restart
 				;;	
