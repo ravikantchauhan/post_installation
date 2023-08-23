@@ -75,6 +75,7 @@ cmd=(dialog --separate-output --checklist "PHP $(php -v | grep cli | awk '{print
 				echo "Include /etc/phpmyadmin/apache.conf" >> /etc/apache2/apache2.conf
 				echo "Enabling module rewrite"
 				sudo a2enmod rewrite
+    				sudo a2enmod headers
 				echo "Restarting Apache Server"
 				service apache2 restart
 				cd /tmp/
