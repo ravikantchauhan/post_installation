@@ -88,6 +88,9 @@ cmd=(dialog --separate-output --checklist "PHP $(php -v | grep cli | awk '{print
 				cd phpMyAdmin-5.2.1-english
 				sudo mv *  /usr/share/phpmyadmin/
 				sudo mv .*  /usr/share/phpmyadmin/
+    				sudo update-alternatives --set php /usr/bin/php$php_versin
+				sudo update-alternatives --set phar /usr/bin/phar$php_versin
+				sudo update-alternatives --set phar.phar /usr/bin/phar.phar$php_versin
 				systemctl restart apache2
 				fi
 				service apache2 restart
