@@ -20,3 +20,21 @@ This Bash script is designed to simplify the installation, uninstallation, and m
 
    ```bash
    git clone https://github.com/ravikantchauhan/post_installation.git
+   ```
+2. Navigate to the directory containing the script:
+   ```bash
+   cd post_installation
+   ```
+3. Make the script executable:
+   ```bash
+   chmod +x lamp.sh
+   ```
+4. Execute the script with root privileges:
+   ```bash
+   sudo ./lamp.sh
+   ```
+5. Follow the on-screen instructions to select your desired options.
+## Options
+Uninstall PHP: Removes PHP from the system.
+Keep Current PHP Version: Retains the existing PHP installation.
+Install LAMP Stack: Installs Apache, PHP, MySQL Server, and configures phpMyAdmin.
